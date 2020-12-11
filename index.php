@@ -1,21 +1,11 @@
 <?php 
-include 'menu.php';
-include 'common.php';
+include '/inc/menu.php';
+include '/inc/common.php';
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-
-<style>
-    h1 {
-        color: blue;
-    }
-    img {
-
-    }
-
-</style>
 
 </head>
 <body>
