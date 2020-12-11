@@ -12,7 +12,7 @@ include 'inc/common.php';
 
 <h1>Projecten overzicht</h1>
 
-<img src="logo.png" alt="Logo MessingMedia">
+<img src="/images/logo.png" alt="Logo MessingMedia">
 
 <br> <br> <br>
 
