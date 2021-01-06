@@ -3,6 +3,21 @@ include 'inc/menu.php';
 include 'inc/common.php';
 ?>
 
+
+
+<?php
+    // if ( "test" == "POST") {
+   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        echo 'POST VALUES'; 
+        echo '<pre>'; 
+        print_r($_POST); 
+        echo '</pre>';
+    }
+    
+    
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +39,7 @@ include 'inc/common.php';
 <h1>Toevoegen project</h1>
 
 <table>
-    <form method="post" action="/action_page.php">
+    <form method="post" action="">
         <tr>
             <td> <label for="name">Naam:</label> </td>
             <td> <input type="text" id="name" name="name" size="40"> </td>
@@ -46,14 +61,6 @@ include 'inc/common.php';
         
     </form>
 
-    <?
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            echo 'POST VALUES'; 
-            echo '<pre>'; 
-            print_r($_POST); 
-            echo '</pre>';
-            }
-    ?>
 
 </table>
 
