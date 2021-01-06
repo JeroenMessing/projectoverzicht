@@ -1,3 +1,8 @@
+<?php 
+include 'inc/menu.php';
+include 'inc/common.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +24,7 @@
 <h1>Toevoegen project</h1>
 
 <table>
-    <form action="/action_page.php">
+    <form method="post" action="/action_page.php">
         <tr>
             <td> <label for="name">Naam:</label> </td>
             <td> <input type="text" id="name" name="name" size="40"> </td>
@@ -39,8 +44,18 @@
         
         <th colspan="2"> <input type="submit" value="Submit"> </td>
         
-      </form>
-  </table>
+    </form>
+
+    <?
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            echo 'POST VALUES'; 
+            echo '<pre>'; 
+            print_r($_POST); 
+            echo '</pre>';
+            }
+    ?>
+
+</table>
 
 </body>
 </html>

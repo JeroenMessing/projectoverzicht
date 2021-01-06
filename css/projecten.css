@@ -1,0 +1,18 @@
+img{
+    text-align: right;
+ }
+ h1{
+     color: black;
+     border-style: solid;    
+ }
+ a:link {
+     color: rgb(44, 44, 185);
+ }
+
+ a:visited {
+    color: rgb(44, 44, 185);
+}
+a:hover {
+    color: red;
+    background-color: yellow;
+ }

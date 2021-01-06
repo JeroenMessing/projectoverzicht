@@ -1,26 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<style>
-    img{
-       align: right;
-    }
-    h1{
-        color: SeaGreen;
-    }
-</style>
-
+  <link rel="stylesheet" href="css/projecten.css">
 </head>
 
 <body>
 
-<img src="logo.png" alt="Logo MessingMedia">
+<img src="/images/logo.png" alt="Logo MessingMedia">
 
 <div id="menu">
-  <h1>Home</h1>
-  <h1>Toevoegen project</h1>
-  <h1>Overzicht projecten</h1>
+  <h1> <a href= "index.php">Home</a> | <a href="toevoegen.php">Toevoegen project</a> | <a href="overzicht.php">Overzicht projecten</a> </h1>
 </div>
 
 </body>

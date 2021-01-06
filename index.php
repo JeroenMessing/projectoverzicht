@@ -6,11 +6,12 @@ include 'inc/common.php';
 <!DOCTYPE html>
 <html>
 <head>
-
+<link rel="stylesheet" href="projecten.css">
 </head>
+
 <body>
 
-<h1>Projecten overzicht</h1>
+
 
 <img src="/images/logo.png" alt="Logo MessingMedia">
 
@@ -20,5 +21,6 @@ include 'inc/common.php';
 <br>
 <a href="overzicht.php">overzicht</a>
 <br>
+<a href="selectors.css">selectors.css</a>
 </body>
 </html>
