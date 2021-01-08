@@ -9,21 +9,21 @@ include 'inc/common.php';
     $name = $_POST['name'];
     $livesite = $_POST['livesite'];
     $devsite = $_POST['devsite'];
-    $git = $_POST['livesite'];
+    $git = $_POST['git'];
     // if ( "test" == "POST") {
-   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        echo 'POST VALUES'; 
-        echo '<pre>'; 
-        print_r($_POST); 
-        echo '</pre>';
-    }
+   //if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        //echo 'POST VALUES'; 
+        //echo '<pre>'; 
+        //print_r($_POST); 
+        //echo '</pre>';
+    //}
 
-    echo 'Naam ='.$name.'<br>';
-    echo 'LiveSite ='.$livesite.'<br>';
-    echo 'DevelopmentSite ='.$devsite.'<br>';
-    echo 'GitHubRepo ='.$git.'<br>';
-    
-    
+    $a = ' uit formulier';
+
+    echo $name . $a.'<br>';
+    echo $livesite . $a.'<br>';
+    echo $devsite . $a.'<br>';
+    echo $git.'<br>';
 ?>
 
 
