@@ -18,12 +18,22 @@ include 'inc/common.php';
         //echo '</pre>';
     //}
 
-    $a = ' uit formulier';
+    //$a = ' uit formulier';
 
-    echo $name . $a.'<br>';
-    echo $livesite . $a.'<br>';
-    echo $devsite . $a.'<br>';
-    echo $git.'<br>';
+    //echo $name . $a.'<br>';
+    //echo $livesite . $a.'<br>';
+    //echo $devsite . $a.'<br>';
+    //echo $git.'<br>';
+
+    try {
+        $sql = "INSERT INTO project ($name, $livesite, $devsite, $git) VALUES ($name, $livesite, $devsite, $git)";
+        $db->exec($sql);
+        echo 'Toevoegen gelukt' . '<br>';
+        echo $sql;
+      } 
+    catch(PDOException $e) {
+        echo $sql . '<br>' . $e->getMessage();
+      }
 ?>
 
 
