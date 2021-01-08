@@ -18,10 +18,10 @@ include 'inc/common.php';
         echo '</pre>';
     }
 
-    echo 'Naam ='.$name.'<br>;
-    echo 'LiveSite ='.$livesite.'<br>;
-    echo 'DevelopmentSite ='.$devsite.'<br>;
-    echo 'GitHubRepo ='.$git.'<br>;
+    echo 'Naam ='.$name.'<br>';
+    echo 'LiveSite ='.$livesite.'<br>';
+    echo 'DevelopmentSite ='.$devsite.'<br>';
+    echo 'GitHubRepo ='.$git.'<br>';
     
     
 ?>
