@@ -26,9 +26,9 @@ include 'inc/common.php';
     //echo $git.'<br>';
 
     try {
-        $sql = "INSERT INTO project ($name, $livesite, $devsite, $git) VALUES ($name, $livesite, $devsite, $git)";
+        $sql = "INSERT INTO project (Naam, LiveSite, DevelopmentSite, GitHubRepo) VALUES ('$name','$livesite','$devsite', '$git')";
         $db->exec($sql);
-        echo 'Toevoegen gelukt' . '<br>';
+        echo 'Toevoegen gelukt ...' . '<br>';
         echo $sql;
       } 
     catch(PDOException $e) {
