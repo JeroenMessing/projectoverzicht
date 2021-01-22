@@ -3,32 +3,21 @@ include 'inc/menu.php';
 include 'inc/common.php';
 ?>
 
-
+<html>
+    <body>
+        <p> <span style="color:green"> Toevoegen gelukt. </span> </p>
+    </body>
+</html>
 
 <?php
     $name = $_POST['name'];
     $livesite = $_POST['livesite'];
     $devsite = $_POST['devsite'];
     $git = $_POST['git'];
-    // if ( "test" == "POST") {
-   //if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        //echo 'POST VALUES'; 
-        //echo '<pre>'; 
-        //print_r($_POST); 
-        //echo '</pre>';
-    //}
-
-    //$a = ' uit formulier';
-
-    //echo $name . $a.'<br>';
-    //echo $livesite . $a.'<br>';
-    //echo $devsite . $a.'<br>';
-    //echo $git.'<br>';
 
     try {
         $sql = "INSERT INTO project (Naam, LiveSite, DevelopmentSite, GitHubRepo) VALUES ('$name','$livesite','$devsite', '$git')";
         $db->exec($sql);
-        echo 'Toevoegen gelukt ...' . '<br>';
         echo $sql;
       } 
     catch(PDOException $e) {
