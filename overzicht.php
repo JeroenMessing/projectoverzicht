@@ -3,20 +3,23 @@ include 'inc/menu.php';
 include 'inc/common.php';
 include 'inc/toevoegen.php';
 
-print file_get_contents('https://www.faat.be/phpmyadmin/sql.php');
+// print file_get_contents('https://www.faat.be/phpmyadmin/sql.php');
 
 
-$name = $_POST['name'];
-$livesite = $_POST['livesite'];
-$devsite = $_POST['devsite'];
-$git = $_POST['git'];
+// echo $page_content;
+// echo $responsivetable;
 
-echo $page_content;
-echo $responsivetable;
-
-echo $thead;
+// echo $thead;
 
 //SELECT * FROM `project`
+
+// Hier halen we alle project data op
+$sql = "SELECT * FROM project";
+$rows = $db->query($sql)->fetchAll();
+
+
+
+
 
 ?>
 
@@ -27,13 +30,27 @@ echo $thead;
 
 <table style="width:30%">
     <tr>
-        <th> testheader1 </th>
-        <th> testheader2 </th>
+        <th> Naam </th>
+        <th> LiveSite </th>
+        <th> DevelopmentSite </th>
+        <th> GitHubrepo </th>
+
     </tr>
 
-    <tr>
-        <td> test1 </td>
-        <td> test2 </td>
+<?
+// hier lopen we door de rijen van de projectdata heen en tonen de velden in table rows / <td>'s
+// Je mag deze tabel compleet maken en wat mooier opmaken.
+foreach ($rows as $row) {
+    echo "<tr>";
+    echo "<td>".$row['Naam']."</td>";
+    echo "<td> Deze nog doen </td>";
+    echo "<td> Deze nog doen </td>";
+    echo "<td> Deze nog doen </td>";
+    echo "</tr>";
+    
+}
+?>
+
     </tr>
 </table>
 </body>
