@@ -17,35 +17,49 @@ include 'inc/toevoegen.php';
 $sql = "SELECT * FROM project";
 $rows = $db->query($sql)->fetchAll();
 
-
-
-
-
 ?>
+
 
 <!DOCTYPE html>
 <html>
 
-<body>
+<head>
+<style>
 
+table {
+ border-style:solid;
+ border-width:2px;
+ border-color: black;
+ background-color: silver;
+ }
+
+ th, td {
+ border-style:solid;
+ border-width:1px;
+ border-color: black;
+ background-color: white;
+ }
+
+</style>
+</head>
+
+<body>
 <table style="width:30%">
     <tr>
         <th> Naam </th>
         <th> LiveSite </th>
         <th> DevelopmentSite </th>
-        <th> GitHubrepo </th>
-
+        <th> GitHubRepo </th>
     </tr>
-
 <?
 // hier lopen we door de rijen van de projectdata heen en tonen de velden in table rows / <td>'s
 // Je mag deze tabel compleet maken en wat mooier opmaken.
 foreach ($rows as $row) {
     echo "<tr>";
     echo "<td>".$row['Naam']."</td>";
-    echo "<td> Deze nog doen </td>";
-    echo "<td> Deze nog doen </td>";
-    echo "<td> Deze nog doen </td>";
+    echo "<td>".$row['LiveSite']."</td>";
+    echo "<td>".$row['DevelopmentSite']."</td>";
+    echo "<td>".$row['GitHubRepo']."</td>";
     echo "</tr>";
     
 }
