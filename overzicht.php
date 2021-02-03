@@ -59,7 +59,7 @@ foreach ($rows as $row) {
     echo "<tr>";
     echo "<td>".$row['Naam']."</td>";
     echo "<td>".$row['LiveSite']."</td>";
-    echo "<td>" <a href="<?php echo $row['Developmentsite']; ?>"> <?php echo $row['Developmentsite']; ?> </a>"</td>";
+    echo "<td><a href='".$row['DevelopmentSite']."' target='_blank'>".$row['DevelopmentSite']."</a></td>";
     echo "<td>".$row['GitHubRepo']."</td>";
     echo "</tr>";
 }
