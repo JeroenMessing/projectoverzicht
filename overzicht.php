@@ -26,20 +26,21 @@ $rows = $db->query($sql)->fetchAll();
 <head>
 <style>
 
-table {
- border-style:solid;
- border-width:2px;
- border-color: black;
- background-color: silver;
- }
-
- th, td {
+table, th, td, tr {
  border-style:solid;
  border-width:1px;
  border-color: black;
- background-color: white;
+ border-collapse: collapse;
  }
 
+ tr:nth-child(even) {
+     background-color: #f2f2f2;
+    }
+
+    th { 
+        font-size: 140%;
+        background-color: darkgrey;
+    }
 </style>
 </head>
 
@@ -47,8 +48,8 @@ table {
 <table style="width:30%">
     <tr>
         <th> Naam </th>
-        <th> LiveSite </th>
-        <th> DevelopmentSite </th>
+        <th> <a href="https://faat.be/index.php" target="_blank">LiveSite</a> </th>
+        <th> <a href="https://faat.be/index.php" target="_blank">DevelopmentSite</a> </th>
         <th> GitHubRepo </th>
     </tr>
 <?
@@ -58,13 +59,11 @@ foreach ($rows as $row) {
     echo "<tr>";
     echo "<td>".$row['Naam']."</td>";
     echo "<td>".$row['LiveSite']."</td>";
-    echo "<td>".$row['DevelopmentSite']."</td>";
+    echo "<td>" <a href="<?php echo $row['Developmentsite']; ?>"> <?php echo $row['Developmentsite']; ?> </a>"</td>";
     echo "<td>".$row['GitHubRepo']."</td>";
     echo "</tr>";
-    
 }
 ?>
-
     </tr>
 </table>
 </body>
