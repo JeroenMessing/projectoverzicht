@@ -37,8 +37,10 @@ $rows = $db->query($sql)->fetchAll();
         <th> <a href="https://faat.be/index.php" target="_blank">LiveSite</a> </th>
         <th> <a href="https://faat.be/index.php" target="_blank">DevelopmentSite</a> </th>
         <th> GitHubRepo </th>
+        <th> <a href="wijzig.php" id="wijzig.php?id=10"> <img src="/images/edit.png" alt="wijzig"> </a></th>
     </tr>
-<?
+
+    <?
 // hier lopen we door de rijen van de projectdata heen en tonen de velden in table rows / <td>'s
 // Je mag deze tabel compleet maken en wat mooier opmaken.
 foreach ($rows as $row) {
@@ -47,9 +49,11 @@ foreach ($rows as $row) {
     echo "<td><a href='".$row['LiveSite']."' target='_blank'>".$row['LiveSite']."</a></td>";
     echo "<td><a href='".$row['DevelopmentSite']."' target='_blank'>".$row['DevelopmentSite']."</a></td>";
     echo "<td>".$row['GitHubRepo']."</td>";
-    echo "</tr>";
+    echo "<td>"." link "."</td>";
+    echo "</tr>"; 
 }
 ?> 
+ 
 </table>
 </body>
 
