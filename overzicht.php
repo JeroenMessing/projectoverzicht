@@ -37,7 +37,7 @@ $rows = $db->query($sql)->fetchAll();
         <th> <a href="https://faat.be/index.php" target="_blank">LiveSite</a> </th>
         <th> <a href="https://faat.be/index.php" target="_blank">DevelopmentSite</a> </th>
         <th> GitHubRepo </th>
-        <th> <a href="wijzig.php" id="wijzig.php?id=10"> <img src="/images/edit.png" alt="wijzig"> </a></th>
+        <th><img src="/images/edit.png" alt="wijzig"></th>
     </tr>
 
     <?
@@ -49,7 +49,10 @@ foreach ($rows as $row) {
     echo "<td><a href='".$row['LiveSite']."' target='_blank'>".$row['LiveSite']."</a></td>";
     echo "<td><a href='".$row['DevelopmentSite']."' target='_blank'>".$row['DevelopmentSite']."</a></td>";
     echo "<td>".$row['GitHubRepo']."</td>";
-    echo "<td>"." link "."</td>";
+    echo "<td>"."<a href='wijzig.php?";
+    echo "id=9999";  // de 9999 mag hier vervangen worden met de id van het project uit de database
+    echo  "'>";
+    echo "<img src='/images/edit.png' alt='wijzig'> </a></td>";
     echo "</tr>"; 
 }
 ?> 
