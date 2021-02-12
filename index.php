@@ -19,7 +19,5 @@ include 'inc/common.php';
 <a href="toevoegen.php">toevoegen</a>
 <br>
 <a href="overzicht.php">overzicht</a>
-<br>
-<a href="selectors.css">selectors.css</a>
 </body>
 </html>

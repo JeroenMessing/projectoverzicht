@@ -28,9 +28,9 @@ include 'inc/overzicht.php';
 
 <?php
 
- $id = $_GET['ID'];
+ $id = $_GET['id'];
 
-echo '<p>'. 'het ID is '. $_GET['ID'] .'</p>';
+echo '<p>'. 'het ID is '. $_GET['id'] .'</p>';
 
 $qry = mysqli_query($db,"select * from tblemp where id='$id'"); // select query
 
@@ -66,7 +66,7 @@ if(isset($_POST['update'])) // when click on Update button
         </tr>
         <tr>
             <td>  <label for="livesite">LiveSite:</label> </td>
-            <td> <input type="text" id="livesite" name="livesite"  value="<?php echo $livesite['ID'] ?>" placeholder="LiveSite placeholder" size="40"> </td>
+            <td> <input type="text" id="livesite" name="livesite"  value="<?php echo $livesite['id'] ?>" placeholder="LiveSite placeholder" size="40"> </td>
         </tr>
         <tr>
             <td> <label for="devsite">DevelopmentSite:</label> </td>
