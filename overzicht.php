@@ -34,10 +34,10 @@ $rows = $db->query($sql)->fetchAll();
 <table style="width:30%">
     <tr>
         <th> Naam </th>
-        <th> <a href="https://faat.be/index.php" target="_blank">LiveSite</a> </th>
-        <th> <a href="https://faat.be/index.php" target="_blank">DevelopmentSite</a> </th>
+        <th> LiveSite </th>
+        <th> DevelopmentSite </th>
         <th> GitHubRepo </th>
-        <th><img src="/images/edit.png" alt="wijzig"></th>
+        <th> Wijzig </th>
     </tr>
 
     <?
@@ -48,9 +48,9 @@ foreach ($rows as $row) {
     echo "<td>".$row['Naam']."</td>";
     echo "<td><a href='".$row['LiveSite']."' target='_blank'>".$row['LiveSite']."</a></td>";
     echo "<td><a href='".$row['DevelopmentSite']."' target='_blank'>".$row['DevelopmentSite']."</a></td>";
-    echo "<td>".$row['GitHubRepo']."</td>";
+    echo "<td>".$row['DevelopmentSite']."</td>";
     echo "<td>"."<a href='wijzig.php?";
-    echo "id=9999";  // de 9999 mag hier vervangen worden met de id van het project uit de database
+    echo "id=".$row['ID'].""; 
     echo  "'>";
     echo "<img src='/images/edit.png' alt='wijzig'> </a></td>";
     echo "</tr>"; 
