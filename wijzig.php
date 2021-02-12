@@ -1,8 +1,7 @@
 <?php 
 include 'inc/menu.php';
 include 'inc/common.php';
-include 'inc/toevoegen.php';
-include 'inc/overzicht.php';
+
 
 ?>
 
@@ -32,9 +31,16 @@ include 'inc/overzicht.php';
 
 echo '<p>'. 'het ID is '. $_GET['id'] .'</p>';
 
-$qry = mysqli_query($db,"select * from tblemp where id='$id'"); // select query
+//$qry = mysqli_query($db,"select * from tblemp where id='$id'"); // select query
+// $qry = "SELECT * from project where id=".$id;
+//  echo $qry;
+// // $data = mysqli_fetch_array($qry); // fetch data
+// $row = $db->query($sql)->fetch();
 
-$data = mysqli_fetch_array($qry); // fetch data
+$sql = "SELECT * FROM project where id=".$id;
+$row = $db->query($sql)->fetch();
+
+print_r($row);
 
 if(isset($_POST['update'])) // when click on Update button
 {
@@ -62,7 +68,7 @@ if(isset($_POST['update'])) // when click on Update button
     <form method="post" action="">
         <tr>
             <td> <label for="name">Naam:</label> </td>
-            <td> <input type="text" id="name" name="name" value="<?php echo 'naam test (handmatig)' ?>" size="40"> </td>
+            <td> <input type="text" id="name" name="name" value="<?php echo $row['Naam']?>" size="40"> </td>
         </tr>
         <tr>
             <td>  <label for="livesite">LiveSite:</label> </td>
