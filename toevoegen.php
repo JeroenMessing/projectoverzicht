@@ -18,7 +18,6 @@ include 'inc/common.php';
     try {
         $sql = "INSERT INTO project (Naam, LiveSite, DevelopmentSite, GitHubRepo) VALUES ('$name','$livesite','$devsite', '$git')";
         $db->exec($sql);
-        echo $sql;
       } 
     catch(PDOException $e) {
         echo $sql . '<br>' . $e->getMessage();

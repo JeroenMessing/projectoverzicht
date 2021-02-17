@@ -27,36 +27,24 @@ include 'inc/common.php';
 
 <?php
 
- $id = $_GET['id'];
-
-echo '<p>'. 'het ID is '. $_GET['id'] .'</p>';
+$id = $_GET['id'];
 
 $sql = "SELECT * FROM project where id=".$id;
 $row = $db->query($sql)->fetch();
 
-print_r($row);
 
-$naam = "naam";
-$livesite = "livesite";
-$devsite = "devsite";
-$git = "git";
+$name = $_POST["name"];
+$liveSite = $_POST["livesite"];
+$devSite = $_POST["devsite"];
+$git = $_POST["git"];
 
-// Create connection
-$conn = new mysqli($naam, $livesite, $devsite, $git);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+
+
+if(isset($_POST['name'])){
+    $sql = "UPDATE project SET Naam = '".$name."', LiveSite = '".$liveSite."', DevelopmentSite = '".$devSite."', GitHubRepo = '".$git."' WHERE ID=".$id;
+    $db->exec($sql);
+    // TODO de update is gelukt, je mag hier terug naar het overzicht overzicht.php
 }
-
-$sql = "UPDATE faatbe_dev SET naam='hans' WHERE id=" .$id;
-
-if ($conn->query($sql) === TRUE) {
-  echo "Record updated successfully";
-} else {
-  echo "Error updating record: " . $conn->error;
-}
-
-$conn->close();
 
 ?>
 
