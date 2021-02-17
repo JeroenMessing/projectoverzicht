@@ -31,37 +31,33 @@ include 'inc/common.php';
 
 echo '<p>'. 'het ID is '. $_GET['id'] .'</p>';
 
-//$qry = mysqli_query($db,"select * from tblemp where id='$id'"); // select query
-// $qry = "SELECT * from project where id=".$id;
-//  echo $qry;
-// // $data = mysqli_fetch_array($qry); // fetch data
-// $row = $db->query($sql)->fetch();
-
 $sql = "SELECT * FROM project where id=".$id;
 $row = $db->query($sql)->fetch();
 
 print_r($row);
 
-if(isset($_POST['update'])) // when click on Update button
-{
-    $name = $_POST['Naam'];
-    $livesite = $_POST['LiveSite'];
-    $devsite = $_POST['DevelopmentSite'];
-    $git = $_POST['DevelopmentSite'];
-	
-    $edit = mysqli_query($db,"update tblemp set name='$name', livesite='$livesite', devsite='$devsite', git='$git' age='$age' where id='$id'");
-	
-    if($edit)
-    {
-        mysqli_close($db); // Close connection
-        header("location:all_records.php"); // redirects to all records page
-        exit;
-    }
-    else
-    {
-        echo mysqli_error();
-    }    	
+$naam = "naam";
+$livesite = "livesite";
+$devsite = "devsite";
+$git = "git";
+
+// Create connection
+$conn = new mysqli($naam, $livesite, $devsite, $git);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
+
+$sql = "UPDATE faatbe_dev SET naam='hans' WHERE id=" .$id;
+
+if ($conn->query($sql) === TRUE) {
+  echo "Record updated successfully";
+} else {
+  echo "Error updating record: " . $conn->error;
+}
+
+$conn->close();
+
 ?>
 
 <table>
@@ -72,15 +68,15 @@ if(isset($_POST['update'])) // when click on Update button
         </tr>
         <tr>
             <td>  <label for="livesite">LiveSite:</label> </td>
-            <td> <input type="text" id="livesite" name="livesite"  value="<?php echo $livesite['id'] ?>" placeholder="LiveSite placeholder" size="40"> </td>
+            <td> <input type="text" id="livesite" name="livesite"  value="<?php echo $row['LiveSite']?>" placeholder="LiveSite placeholder" size="40"> </td>
         </tr>
         <tr>
             <td> <label for="devsite">DevelopmentSite:</label> </td>
-            <td> <input type="text" id="devsite" name="devsite" size="40"> </td>
+            <td> <input type="text" id="devsite" name="devsite" value="<?php echo $row['DevelopmentSite']?>" size="40"> </td>
         </tr>
         <tr>
             <td> <label for="git">GitHubRepo:</label> </td>
-            <td> <input type="text" id="git" name="git" size="40"> </td>
+            <td> <input type="text" id="git" name="git" value="<?php echo $row['LiveSite']?>" size="40"> </td>
         </tr>
         
         <th colspan="2"> <input type="submit" name="wijzig" value="Wijzigen"> </td>
