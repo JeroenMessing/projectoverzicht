@@ -17,7 +17,7 @@ include 'inc/common.php';
     $comments = $_POST['comments'];
 
     try {
-        $sql = "INSERT INTO project (Naam, LiveSite, DevelopmentSite, GitHubRepo) VALUES ('$name','$livesite','$devsite', '$git', '$comments')";
+        $sql = "INSERT INTO project (Naam, LiveSite, DevelopmentSite, GitHubRepo, Comments) VALUES ('$name','$livesite','$devsite', '$git', '$comments')";
         $db->exec($sql);
       } 
     catch(PDOException $e) {
