@@ -37,6 +37,7 @@ $rows = $db->query($sql)->fetchAll();
         <th> LiveSite </th>
         <th> DevelopmentSite </th>
         <th> GitHubRepo </th>
+        <th> Comments </th>
         <th> Wijzig </th>
     </tr>
 
@@ -48,7 +49,8 @@ foreach ($rows as $row) {
     echo "<td>".$row['Naam']."</td>";
     echo "<td><a href='".$row['LiveSite']."' target='_blank'>".$row['LiveSite']."</a></td>";
     echo "<td><a href='".$row['DevelopmentSite']."' target='_blank'>".$row['DevelopmentSite']."</a></td>";
-    echo "<td>".$row['DevelopmentSite']."</td>";
+    echo "<td>".$row['GitHubRepo']."</td>";
+    echo "<td>".$row['Comments']."</td>";
     echo "<td>"."<a href='wijzig.php?";
     echo "id=".$row['ID'].""; 
     echo  "'>";

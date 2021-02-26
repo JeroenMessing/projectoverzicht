@@ -1,24 +1,35 @@
-img{
-    text-align: right;
+ h1 {
+     color:  rgb(177, 173, 173);   
  }
- h1{
-     color: black;
-     border-style: solid;    
- }
+a.outset {
+    outline-style: outset;
+    background-color: rgb(104, 182, 111);
+    outline-color: rgb(26, 26, 26);
+    width: 300px;
+    margin-right: 10px;
+    margin-left: 10px;     
+    }
  a:link {
-     color: rgb(44, 44, 185);
+     color: rgb(31, 97, 197);
  }
 
  a:visited {
-    color: rgb(44, 44, 185);
+    color: rgb(81, 31, 197);
 }
 a:hover {
     color: red;
     background-color: yellow;
  }
-
  table {
  border-style:solid;
  border-width:2px;
  border-color: black;
  }
+ body {
+    background-color: rgb(245, 245, 245);
+}
+img {
+    text-align: right;
+ }
+
+

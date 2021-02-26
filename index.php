@@ -10,12 +10,7 @@ include 'inc/common.php';
 </head>
 
 <body>
-
-
-
-<img src="/images/logo.png" alt="Logo MessingMedia">
-
-<br> <br> <br>
+<br> 
 <a href="toevoegen.php">toevoegen</a>
 <br>
 <a href="overzicht.php">overzicht</a>

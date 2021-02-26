@@ -41,8 +41,9 @@ $git = $_POST["git"];
 
 
 if(isset($_POST['name'])){
-    $sql = "UPDATE project SET Naam = '".$name."', LiveSite = '".$liveSite."', DevelopmentSite = '".$devSite."', GitHubRepo = '".$git."' WHERE ID=".$id;
+    $sql = "UPDATE project SET Naam = '".$name."', LiveSite = '".$liveSite."', DevelopmentSite = '".$devSite."', GitHubRepo = '".$git."', Comments = '".$comments."' WHERE ID=".$id;
     $db->exec($sql);
+    header("Location: https://faat.be/overzicht.php");
     // TODO de update is gelukt, je mag hier terug naar het overzicht overzicht.php
 }
 
@@ -64,7 +65,11 @@ if(isset($_POST['name'])){
         </tr>
         <tr>
             <td> <label for="git">GitHubRepo:</label> </td>
-            <td> <input type="text" id="git" name="git" value="<?php echo $row['LiveSite']?>" size="40"> </td>
+            <td> <input type="text" id="git" name="git" value="<?php echo $row['GitHubRepo']?>" size="40"> </td>
+        </tr>
+        <tr>
+            <td> <label for="comments">Comments:</label> </td>
+            <td> <input type="text" id="comments" name="comments" value="<?php echo $row['Comments']?>" size="40"> </td>
         </tr>
         
         <th colspan="2"> <input type="submit" name="wijzig" value="Wijzigen"> </td>

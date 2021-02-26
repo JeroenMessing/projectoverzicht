@@ -14,9 +14,10 @@ include 'inc/common.php';
     $livesite = $_POST['livesite'];
     $devsite = $_POST['devsite'];
     $git = $_POST['git'];
+    $comments = $_POST['comments'];
 
     try {
-        $sql = "INSERT INTO project (Naam, LiveSite, DevelopmentSite, GitHubRepo) VALUES ('$name','$livesite','$devsite', '$git')";
+        $sql = "INSERT INTO project (Naam, LiveSite, DevelopmentSite, GitHubRepo) VALUES ('$name','$livesite','$devsite', '$git', '$comments')";
         $db->exec($sql);
       } 
     catch(PDOException $e) {
@@ -62,6 +63,10 @@ include 'inc/common.php';
         <tr>
             <td> <label for="git">GitHubRepo:</label> </td>
             <td> <input type="text" id="git" name="git" size="40"> </td>
+        </tr>
+        <tr>
+            <td> <label for="comments">Comments:</label> </td>
+            <td> <input type="text" id="comments" name="comments" size="40"> </td>
         </tr>
         
         <th colspan="2"> <input type="submit" value="Submit"> </td>
