@@ -37,6 +37,7 @@ $name = $_POST["name"];
 $liveSite = $_POST["livesite"];
 $devSite = $_POST["devsite"];
 $git = $_POST["git"];
+$comments = $_POST["comments"];
 
 
 
@@ -67,12 +68,11 @@ if(isset($_POST['name'])){
             <td> <label for="git">GitHubRepo:</label> </td>
             <td> <input type="text" id="git" name="git" value="<?php echo $row['GitHubRepo']?>" size="40"> </td>
         </tr>
+        <th colspan="2"> <input type="submit" name="wijzig" value="Wijzigen"> </td>
         <tr>
             <td> <label for="comments">Comments:</label> </td>
-            <td> <input type="text" id="comments" name="comments" value="<?php echo $row['Comments']?>" size="40"> </td>
+            <td> <textarea id="comments" name="comments" rows="10" cols="43"> <?php echo $row['Comments']?> </td>
         </tr>
-        
-        <th colspan="2"> <input type="submit" name="wijzig" value="Wijzigen"> </td>
         
     </form>
 
