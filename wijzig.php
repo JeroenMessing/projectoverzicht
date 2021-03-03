@@ -40,7 +40,6 @@ $git = $_POST["git"];
 $comments = $_POST["comments"];
 
 
-
 if(isset($_POST['name'])){
     $sql = "UPDATE project SET Naam = '".$name."', LiveSite = '".$liveSite."', DevelopmentSite = '".$devSite."', GitHubRepo = '".$git."', Comments = '".$comments."' WHERE ID=".$id;
     $db->exec($sql);
@@ -72,7 +71,9 @@ if(isset($_POST['name'])){
             <td> <label for="comments">Comments:</label> </td>
             <td> <textarea id="comments" name="comments" rows="10" cols="43"> <?php echo $row['Comments']?> </textarea> </td>
         </tr>
-        <th colspan="2"> <input type="submit" name="wijzig" value="Wijzigen"> </td>       
+        <tr>
+            <td></td><td> <input type="submit" name="wijzig" value="Wijzigen"> </td>
+        </tr>           
     </form>
 
 
