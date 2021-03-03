@@ -64,14 +64,13 @@ include 'inc/common.php';
             <td> <label for="git">GitHubRepo:</label> </td>
             <td> <input type="text" id="git" name="git" size="40"> </td>
         </tr>
-
-        <th colspan="2"> <input type="submit" name="submit" value="Submit"> </th>
-
         <tr>
             <td> <label for="comments">Comments:</label> </td>
-            <td> <textarea id="comments" name="comments" placeholder="Comment." rows="10" cols="43"> </td>
+            <td> <textarea id="comments" name="comments" rows="10" cols="43"> <?php echo $row['Comments']?> </textarea> </td>
         </tr>
-        
+        <tr>
+            <td></td><td> <input type="submit" name="wijzig" value="Wijzigen"> </td>
+        </tr>           
     </form>
 
 
