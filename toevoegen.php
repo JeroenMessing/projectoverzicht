@@ -66,10 +66,10 @@ include 'inc/common.php';
         </tr>
         <tr>
             <td> <label for="comments">Comments:</label> </td>
-            <td> <textarea id="comments" name="comments" rows="10" cols="43"> <?php echo $row['Comments']?> </textarea> </td>
+            <td> <textarea id="comments" name="comments" rows="10" cols="43"><?php echo nl2br($row['Comments']) ?> </textarea> </td>
         </tr>
         <tr>
-            <td></td><td> <input type="submit" name="wijzig" value="Wijzigen"> </td>
+            <td></td><td> <input type="submit" name="submit" value="Submit"> </td>
         </tr>           
     </form>
 

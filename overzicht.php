@@ -4,7 +4,7 @@ include 'inc/common.php';
 include 'inc/toevoegen.php';
 
 // Hier halen we alle project data op
-$sql = "SELECT * FROM project";
+$sql = "SELECT * FROM project ORDER BY Naam ASC";
 $rows = $db->query($sql)->fetchAll();
 
 ?>
