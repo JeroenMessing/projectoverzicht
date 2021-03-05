@@ -25,7 +25,6 @@ include 'inc/common.php';
       }
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,10 +34,9 @@ include 'inc/common.php';
     	border: 1px solid black;
     	border-collapse: collapse;
     }
-    
     th{
     	text-align: center;
-       }
+    }
  </style>
 
 </head>
@@ -66,14 +64,12 @@ include 'inc/common.php';
         </tr>
         <tr>
             <td> <label for="comments">Comments:</label> </td>
-            <td> <textarea id="comments" name="comments" rows="10" cols="43"><?php echo nl2br($row['Comments']) ?> </textarea> </td>
+            <td> <textarea id="comments" name="comments" rows="10" cols="43"><?php echo $row['Comments'] ?> </textarea> </td>
         </tr>
         <tr>
             <td></td><td> <input type="submit" name="submit" value="Submit"> </td>
         </tr>           
     </form>
-
-
 </table>
 
 </body>

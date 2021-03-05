@@ -2,11 +2,9 @@
 include 'inc/menu.php';
 include 'inc/common.php';
 include 'inc/toevoegen.php';
-
 // Hier halen we alle project data op
 $sql = "SELECT * FROM project ORDER BY Naam ASC";
 $rows = $db->query($sql)->fetchAll();
-
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +48,7 @@ foreach ($rows as $row) {
     echo "<td><a href='".$row['LiveSite']."' target='_blank'>".$row['LiveSite']."</a></td>";
     echo "<td><a href='".$row['DevelopmentSite']."' target='_blank'>".$row['DevelopmentSite']."</a></td>";
     echo "<td>".$row['GitHubRepo']."</td>";
-    echo "<td>".$row['Comments']."</td>";
+    echo "<td>".nl2br($row['Comments'])."</td>";
     echo "<td>"."<a href='wijzig.php?";
     echo "id=".$row['ID'].""; 
     echo  "'>";

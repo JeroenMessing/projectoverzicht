@@ -1,8 +1,6 @@
 <?php 
 include 'inc/menu.php';
 include 'inc/common.php';
-
-
 ?>
 
 <!DOCTYPE html>
@@ -26,12 +24,10 @@ include 'inc/common.php';
 <h1>Wijzigen</h1>
 
 <?php
-
 $id = $_GET['id'];
 
 $sql = "SELECT * FROM project where id=".$id;
 $row = $db->query($sql)->fetch();
-
 
 $name = $_POST["name"];
 $liveSite = $_POST["livesite"];
@@ -39,14 +35,12 @@ $devSite = $_POST["devsite"];
 $git = $_POST["git"];
 $comments = $_POST["comments"];
 
-
 if(isset($_POST['name'])){
     $sql = "UPDATE project SET Naam = '".$name."', LiveSite = '".$liveSite."', DevelopmentSite = '".$devSite."', GitHubRepo = '".$git."', Comments = '".$comments."' WHERE ID=".$id;
     $db->exec($sql);
     header("Location: https://faat.be/overzicht.php");
     // TODO de update is gelukt, je mag hier terug naar het overzicht overzicht.php
 }
-
 ?>
 
 <table>
@@ -75,8 +69,6 @@ if(isset($_POST['name'])){
             <td></td><td> <input type="submit" name="wijzig" value="Wijzigen"> </td>
         </tr>           
     </form>
-
-
 </table>
 
 </body>
